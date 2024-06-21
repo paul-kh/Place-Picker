@@ -1,22 +1,10 @@
 import { useEffect, useState } from "react";
 
+import ProgressBar from "./ProgressBar";
+
 const TIMMER = 3000;
 
 export default function DeleteConfirmation({ onConfirm, onCancel }) {
-  // Showing Progress Bar When Stored Place is going to be removed when timer runs out
-  const [remainintTime, setRemainingTimer] = useState(TIMMER);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      console.log("INTERVAL");
-      setRemainingTimer((prevTime) => prevTime - 10);
-    }, 10);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
   // Auto delete saved place 3 seconds after the Modal opened
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -53,7 +41,7 @@ export default function DeleteConfirmation({ onConfirm, onCancel }) {
         </button>
       </div>
       {/* Adding a progress bar to show user the timer when a stored place is going to be removed */}
-      <progress value={remainintTime} max={TIMMER} />
+      <ProgressBar timer={TIMMER} />
     </div>
   );
 }
