@@ -19,7 +19,9 @@ export default function DeleteConfirmation({ onConfirm, onCancel }) {
     return () => {
       clearTimeout(timer);
     };
-  }, []);
+    // Adding a function in the dependency array of useEffect could trigger infinite loop
+    // To make it safe, we need to use useCallback hook
+  }, [onConfirm]);
 
   return (
     <div id="delete-confirmation">
