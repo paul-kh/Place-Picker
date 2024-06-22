@@ -9,7 +9,7 @@ import { sortPlacesByDistance } from "./loc.js";
 
 // Loading places saved in local storage
 // We don't need to use useEffect() because the codes below run synchonously
-const storedIds = JSON.parse(localStorage.getItem("selectedPlaces") || []);
+const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || [];
 const storedPlaces = storedIds.map((id) =>
   AVAILABLE_PLACES.find((place) => place.id === id)
 );
