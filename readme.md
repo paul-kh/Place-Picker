@@ -3,7 +3,7 @@
 This Place Picker app was created for pacticing React concepts, especially the useEffect Hook.
 The app allows user to pick a place they want to visit. The picked places will be moved to the wish list. Initially, the app is asking for user to allow user's location access permission so that the app will sort the places by the closest distance to the user's current location. User can remove any picked places.
 
-- Live URL (Hosted with Firebase): https://tic-tac-toe-reactjs-7a95f.web.app/
+- Live URL (Hosted with Firebase): https://place-picker--reactjs.web.app
 
 ![snapshot of app home page](./src/assets/place-picker.png)
 
